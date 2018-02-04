@@ -5,7 +5,7 @@
  */
 ?>
 <div data-placeholder="messages"></div>
-<div class="container">
+<div class="container" id="carouselContainer" style="display:none;">
   <h2>Today's Best Deals</h2>
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
     <ol class="carousel-indicators">
@@ -28,3 +28,9 @@
     </a>
   </div>
 </div>
+
+<script>
+if(document.title == "Home page"){
+	document.getElementById("carouselContainer").style.display="block";
+}
+</script>
