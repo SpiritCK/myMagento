@@ -79,6 +79,54 @@
         </div>
     </div>
 </form>
+<script>
+    function emojiFound(val) {
+        return val.indexOf(":)") != -1 || val.indexOf(":D") != -1 || val.indexOf(":(") != -1 || val.indexOf(":|") != -1 || val.indexOf(";)") != -1;
+    }
+
+    var hiddenField = document.createElement("input");
+    var reviewField = document.getElementById("review_field");
+    var reviewForm = document.getElementById("review-form");
+    reviewField.parentNode.insertBefore(hiddenField, reviewField);
+    hiddenField.setAttribute("type", "hidden");
+    reviewField.addEventListener("input", function(){
+        while(emojiFound(reviewField.value)) {
+            if (reviewField.value.indexOf(":)") != -1){
+                reviewField.value = reviewField.value.replace(":)", "😊");
+            }
+            if (reviewField.value.indexOf(":D") != -1){
+                reviewField.value = reviewField.value.replace(":D", "😄");
+            }
+            if (reviewField.value.indexOf(":(") != -1){
+                reviewField.value = reviewField.value.replace(":(", "🙁");
+            }
+            if (reviewField.value.indexOf(":|") != -1){
+                reviewField.value = reviewField.value.replace(":|", "😐");
+            }
+            if (reviewField.value.indexOf(";)") != -1){
+                reviewField.value = reviewField.value.replace(";)", "😉");
+            }
+        }
+    }, true);
+
+    reviewForm.addEventListener("submit", function(){
+        if (reviewField.value.indexOf("😊") != -1){
+            reviewField.value = reviewField.value.replace("😊", "U+1F60A");
+        }
+        if (reviewField.value.indexOf("😄") != -1){
+           reviewField.value = reviewField.value.replace("😄", "U+1F604");
+        }
+        if (reviewField.value.indexOf("🙁") != -1){
+            reviewField.value = reviewField.value.replace("🙁", "U+1F641");
+        }
+        if (reviewField.value.indexOf("😐") != -1){
+            reviewField.value = reviewField.value.replace("😐", "U+1F610");
+        }
+        if (reviewField.value.indexOf("😉") != -1){
+            reviewField.value = reviewField.value.replace("😉", "U+1F609");
+        }
+    });
+</script>
 <script type="text/x-magento-init">
 {
     "[data-role=product-review-form]": {
