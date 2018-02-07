@@ -1,0 +1,55 @@
+1. Install update dengan setup:upgrade
+
+2. Buka menu widget, buat widget baru
+    - Type: Ves Image Slider
+    - Theme: Magento Luma
+    - Title: Image Slider
+    - Store view: All Store Views
+    - Add layout update
+        - Display on: Specified Page
+        - Page: CMS Home Page
+        - Container: Main Content Top
+
+3. Pilih Widget Option
+    - animateIn: bounceInRight
+    - animateOut: bounceOutLeft
+    - Auto Height: Yes
+    - Auto Play: Yes
+    - animateIn: bounceInRight
+    - animateOut: bounceOutLeft
+    - Autoplay Timeout: 3000
+    - Autoplay Speed: 3000
+    - Navigation Speed: 800
+    - Dots Speed: 800
+    - Show Dots Navigation: Yes
+    - Pause On Hover: Yes
+    - Loop: Yes
+    - Sisanya no
+
+4. Isi slide
+
+Content 1:
+
+<div class="ves-slider">
+  <div class="text-content position-02">
+    <h2>Fresh burst of color <br/> New Tartine Collection</h2>
+    <a href="#"> learn more </a>
+    <a class="primary" href="#"> shop collection </a>
+  </div>
+  <p><img src="{{media url="slider/slide01.jpg"}}" alt="" /></p>
+</div>
+
+Content 2:
+
+<div class="ves-slider">
+  <div class="text-content">
+    <h2>Fresh burst of color <br/> New Tartine Collection</h2>
+    <a href="#"> learn more </a>
+    <a class="primary" href="#"> shop collection </a>
+  </div>
+  <p><img src="{{media url="slider/slide02.jpg"}}" alt="" /></p>
+</div>
+
+5. Klik Save
+
+6. Refresh cache
