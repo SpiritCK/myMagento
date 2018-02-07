@@ -56,6 +56,28 @@ $format = $block->getDateFormat() ?: \IntlDateFormatter::SHORT;
             </li>
         <?php endforeach; ?>
         </ol>
+        <script>
+            var reviewContents = document.getElementsByClassName("review-content");
+            for (i = 0; i < reviewContents.length; i++) {
+                if (reviewContents[i].textContent.indexOf("U+") != -1) {
+                    if (reviewContents[i].textContent.indexOf("U+1F60A") != -1){
+                        reviewContents[i].textContent = reviewContents[i].textContent.replace("U+1F60A","😊");
+                    }
+                    if (reviewContents[i].textContent.indexOf("U+1F604") != -1){
+                        reviewContents[i].textContent = reviewContents[i].textContent.replace("U+1F604","😄");
+                    }
+                    if (reviewContents[i].textContent.indexOf("U+1F641") != -1){
+                        reviewContents[i].textContent = reviewContents[i].textContent.replace("U+1F641","🙁");
+                    }
+                    if (reviewContents[i].textContent.indexOf("U+1F610") != -1){
+                        reviewContents[i].textContent = reviewContents[i].textContent.replace("U+1F610","😐");
+                    }
+                    if (reviewContents[i].textContent.indexOf("U+1F609") != -1){
+                        reviewContents[i].textContent = reviewContents[i].textContent.replace("U+1F609","😉");
+                    }
+                }
+            };
+        </script>
         <div class="toolbar review-toolbar">
             <?= $block->getChildHtml('toolbar') ?>
         </div>
